@@ -51,11 +51,11 @@ def get_website(p_ip, p_port, uc_, aff_url):
 urls_ = [
 'https://px.a8.net/svt/ejp?a8mat=2TXNQU+SKTTE+50+2I3QOX', # a8 onamae s00000000018015
 'https://px.a8.net/svt/ejp?a8mat=359020+M125U+CO4+100AO1', # a8 xserver s00000001642006
-'https://px.a8.net/svt/ejp?a8mat=35SJJ1+8EG836+4F2E+5YJRM', # a8 kotogami s00000020615001
+'https://px.a8.net/svt/ejp?a8mat=3B5ADU+CL2W4Y+348+64RJ6', # a8 lolipop s00000000404001
 'https://px.a8.net/svt/ejp?a8mat=35HJYB+8KEK4Y+50+5MLDQA', # a8 gmopbb s00000000404011
 'https://px.a8.net/svt/ejp?a8mat=35HJYB+5JG8FM+CO4+O24K2', # a8 6core s00000001642004
 'https://px.a8.net/svt/ejp?a8mat=35SJJ1+8NDQ5U+50+4T34ZM', # a8 z.com s00000000018029
-'https://px.a8.net/svt/ejp?a8mat=35HJYB+8KEK4Y+50+5MLDQA' # a8 conoha s00000000018034
+'https://px.a8.net/svt/ejp?a8mat=35HJYB+8KEK4Y+50+5MLDQA' # a8
 ]
 len_ = len(urls_)
 
