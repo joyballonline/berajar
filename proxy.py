@@ -46,7 +46,7 @@ def get_website0(p_ip, p_port, uc_, suka_url_):
         print(response2.content[0:50])
     except ProxyError:
         print('proxy-err')
-        update_proxy_pool(p_ip, p_port, uc_, 9)
+        update_proxy_pool(p_ip, p_port, uc_, 8)
         insert_log(suka_url_, 901)
     except TooManyRedirects:
         print('Too many redirects')

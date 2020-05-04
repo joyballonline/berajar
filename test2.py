@@ -38,5 +38,7 @@ e.click()
 e = driver.find_element_by_xpath("//div[@class='a7']/a")
 e.click()
 
+print("All executions have been done!")
+
 # ブラウザーを終了
 driver.quit()

@@ -4,6 +4,8 @@ from requests.exceptions import ProxyError
 from requests.exceptions import TooManyRedirects
 from requests.exceptions import ReadTimeout
 import proxy
+from requests.exceptions import ConnectionError
+from requests.exceptions import InvalidProxyURL
 
 
 def get_website(p_ip, p_port, uc_, aff_url):
@@ -35,7 +37,7 @@ def get_website(p_ip, p_port, uc_, aff_url):
     except ProxyError:
         print('timeout')
         rtn=500
-        proxy.update_proxy_pool(p_ip, p_port, uc_, 9)
+        proxy.update_proxy_pool(p_ip, p_port, uc_, 8)
     except TooManyRedirects:
         print('Too many redirects')
         rtn=500
@@ -44,6 +46,15 @@ def get_website(p_ip, p_port, uc_, aff_url):
         print('read-timeout')
         rtn=903
         proxy.update_proxy_pool(p_ip, p_port, uc_, 9)
+    except ConnectionError:
+        print('Connection Error')
+        rtn=500
+        proxy.update_proxy_pool(p_ip, p_port, uc_, 9)
+    except InvalidProxyURL:
+        print('Connection Error')
+        rtn=500
+        proxy.update_proxy_pool(p_ip, p_port, uc_, 8)
+
     
     return rtn
 
@@ -59,7 +70,7 @@ urls_ = [
 ]
 len_ = len(urls_)
 
-maxi = 20
+maxi = 80
 index = 0
 i2_ =0
 while index < maxi:
@@ -71,7 +82,3 @@ while index < maxi:
         index+=1
     if i2_ == len_:
         break
-
-
-
-
