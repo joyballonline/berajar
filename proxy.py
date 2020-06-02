@@ -37,7 +37,7 @@ def get_website0(p_ip, p_port, uc_, suka_url_):
         m_ = False
         m_ = re.search(rb"HTTP(.*)400(.*)", response2.content[0:50])
         if m_:
-            update_proxy_pool(p_ip, p_port, uc_, 9)
+            update_proxy_pool(p_ip, p_port, (uc_-1), 9)
             insert_log(suka_url_, 400)
         else:
             update_proxy_pool(p_ip, p_port, uc_, 1)
@@ -46,19 +46,19 @@ def get_website0(p_ip, p_port, uc_, suka_url_):
         print(response2.content[0:50])
     except ProxyError:
         print('proxy-err')
-        update_proxy_pool(p_ip, p_port, uc_, 8)
+        update_proxy_pool(p_ip, p_port, (uc_-1), 8)
         insert_log(suka_url_, 901)
     except TooManyRedirects:
         print('Too many redirects')
-        update_proxy_pool(p_ip, p_port, uc_, 9)
+        update_proxy_pool(p_ip, p_port, (uc_-1), 9)
         insert_log(suka_url_, 902)
     except ReadTimeout:
         print('read-timeout')
-        update_proxy_pool(p_ip, p_port, uc_, 9)
+        update_proxy_pool(p_ip, p_port, (uc_-1), 9)
         insert_log(suka_url_, 903)
     except ConnectionError:
         print('conn-timeout')
-        update_proxy_pool(p_ip, p_port, uc_, 9)
+        update_proxy_pool(p_ip, p_port, (uc_-1), 9)
         insert_log(suka_url_, 904)
 
 
@@ -82,9 +82,9 @@ def get_proxy():
 if __name__ == '__main__':
 
     urls_ = [
-        'http://www.sukalifeindo.work/',
+        'https://www13.a8.net/0.gif?a8mat=3B5ADU+CL2W4Y+348+64RJ6',
         'https://www14.a8.net/0.gif?a8mat=359020+M125U+CO4+100AO1',
-        'https://www14.a8.net/0.gif?a8mat=359020+M125U+CO4+100AO1'
+        'https://www18.a8.net/0.gif?a8mat=35HJYB+5FVMSY+348+1U5OQQ'
     ]
     len_ = len(urls_)
     index = 0

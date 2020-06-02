@@ -28,32 +28,33 @@ def get_website(p_ip, p_port, uc_, aff_url):
         m_ = re.search(rb"HTTP(.*)400(.*)", response2.content[0:50])
         if m_:
             rtn = 400
-            proxy.update_proxy_pool(p_ip, p_port, uc_, 9)
+            proxy.update_proxy_pool(p_ip, p_port, (uc_-1), 9)
         else:
             rtn = 200
-            proxy.update_proxy_pool(p_ip, p_port, uc_, 1)              
+            proxy.update_proxy_pool(p_ip, p_port, uc_, 1)
+            proxy.insert_log(aff_url, 2000)              
         print(response2.status_code)
         print(response2.content[0:100])
     except ProxyError:
         print('timeout')
         rtn=500
-        proxy.update_proxy_pool(p_ip, p_port, uc_, 8)
+        proxy.update_proxy_pool(p_ip, p_port, (uc_-1), 8)
     except TooManyRedirects:
         print('Too many redirects')
         rtn=500
-        proxy.update_proxy_pool(p_ip, p_port, uc_, 9)
+        proxy.update_proxy_pool(p_ip, p_port, (uc_-1), 9)
     except ReadTimeout:
         print('read-timeout')
         rtn=903
-        proxy.update_proxy_pool(p_ip, p_port, uc_, 9)
+        proxy.update_proxy_pool(p_ip, p_port, (uc_-1), 9)
     except ConnectionError:
         print('Connection Error')
         rtn=500
-        proxy.update_proxy_pool(p_ip, p_port, uc_, 9)
+        proxy.update_proxy_pool(p_ip, p_port, (uc_-1), 9)
     except InvalidProxyURL:
         print('Connection Error')
         rtn=500
-        proxy.update_proxy_pool(p_ip, p_port, uc_, 8)
+        proxy.update_proxy_pool(p_ip, p_port, (uc_-1), 8)
 
     
     return rtn
