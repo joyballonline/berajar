@@ -115,9 +115,9 @@ if __name__ == '__main__':
     check_proxy_pool()
 
     urls_ = [
-        'https://www13.a8.net/0.gif?a8mat=3B5ADU+CL2W4Y+348+64RJ6',
-        'https://www14.a8.net/0.gif?a8mat=359020+M125U+CO4+100AO1',
-        'https://www18.a8.net/0.gif?a8mat=35HJYB+5FVMSY+348+1U5OQQ'
+        'https://www13.a8.net/0.gif?a8mat=3B5ADU+CL2W4Y+348+66OZ6',
+        'https://www14.a8.net/0.gif?a8mat=359020+M125U+CO4+1050F5',
+        'https://www18.a8.net/0.gif?a8mat=3BM9IN+E1H1DE+CO4+6B70I'
     ]
     len_ = len(urls_)
     index = 0
