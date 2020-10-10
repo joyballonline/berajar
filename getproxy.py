@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 import os, requests, uuid, json, postgresql, datetime, re
+import proxy
 
 def insert_proxy(url_, sc_):
-    db = postgresql.open("pq://postgres:kaoato@localhost/postgres")
+    db = postgresql.open(proxy.connstring)
     sql = "INSERT INTO public.f_proxy_pool_tab(host, port, isactive, udate, use_count) VALUES ($1, $2, $3, $4, $5) "
     sql = sql + "ON CONFLICT (host, port) DO UPDATE SET udate = $6, isactive = 0"
     ps = db.prepare(sql)

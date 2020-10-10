@@ -4,10 +4,12 @@ from requests.exceptions import ProxyError
 from requests.exceptions import TooManyRedirects
 from requests.exceptions import ReadTimeout
 from requests.exceptions import ConnectionError
+from requests.exceptions import InvalidProxyURL
 
+connstring = "pq://postgres:postgres@192.168.17.204/postgres"
 
 def insert_log(url_, sc_):
-    db = postgresql.open("pq://postgres:kaoato@localhost/postgres")
+    db = postgresql.open(connstring)
     ps = db.prepare(
         "INSERT INTO public.f_get_url_log_tab(get_datetime, url, status_code) VALUES ($1, $2, $3)"
     )
@@ -17,7 +19,7 @@ def insert_log(url_, sc_):
 
 
 def update_proxy_pool(p_ip, p_port, uc_, x_):
-    db = postgresql.open("pq://postgres:kaoato@localhost/postgres")
+    db = postgresql.open(connstring)
     ps = db.prepare(
         "UPDATE public.f_proxy_pool_tab SET isactive = $1, udate = $2, use_count = $3 WHERE host = $4 AND port = $5"
     )
@@ -27,7 +29,7 @@ def update_proxy_pool(p_ip, p_port, uc_, x_):
 
 
 def check_proxy_pool():
-    db = postgresql.open("pq://postgres:kaoato@localhost/postgres")
+    db = postgresql.open(connstring)
     ps = db.prepare(
         "SELECT count(*) FROM f_proxy_pool_tab WHERE isactive IN (0,1)")
     h_ = -1
@@ -88,6 +90,9 @@ def get_website0(p_ip, p_port, uc_, suka_url_):
         print('conn-timeout')
         update_proxy_pool(p_ip, p_port, (uc_ - 1), 9)
         insert_log(suka_url_, 904)
+    except InvalidProxyURL:
+        print('fullfil proxy')
+
 
 
 def get_website(p_ip, p_port, uc_, u_):
@@ -95,7 +100,7 @@ def get_website(p_ip, p_port, uc_, u_):
 
 
 def get_proxy():
-    db = postgresql.open("pq://postgres:kaoato@localhost/postgres")
+    db = postgresql.open(connstring)
     ps = db.prepare(
         "SELECT host, port, use_count FROM f_proxy_pool_tab WHERE isactive IN (0, 1) LIMIT 1"
     )
@@ -117,7 +122,8 @@ if __name__ == '__main__':
     urls_ = [
         'https://www13.a8.net/0.gif?a8mat=3B5ADU+CL2W4Y+348+66OZ6',
         'https://www14.a8.net/0.gif?a8mat=359020+M125U+CO4+1050F5',
-        'https://www18.a8.net/0.gif?a8mat=3BM9IN+E1H1DE+CO4+6B70I'
+        'https://www18.a8.net/0.gif?a8mat=3BM9IN+E1H1DE+CO4+6B70I',
+        'https://www18.a8.net/0.gif?a8mat=3BM9IN+E4G7EA+CO4+15UCEA'
     ]
     len_ = len(urls_)
     index = 0
