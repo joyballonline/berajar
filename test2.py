@@ -51,4 +51,5 @@ e.click()
 print("All executions have been done!")
 
 # ブラウザーを終了
+driver.close()
 driver.quit()

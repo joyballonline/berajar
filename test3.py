@@ -24,4 +24,5 @@ print("a2 clicked")
 driver.back()
 
 # ブラウザーを終了
+driver.close()
 driver.quit()

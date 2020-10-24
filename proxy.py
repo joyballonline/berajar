@@ -123,7 +123,8 @@ if __name__ == '__main__':
         'https://www13.a8.net/0.gif?a8mat=3B5ADU+CL2W4Y+348+66OZ6',
         'https://www14.a8.net/0.gif?a8mat=359020+M125U+CO4+1050F5',
         'https://www18.a8.net/0.gif?a8mat=3BM9IN+E1H1DE+CO4+6B70I',
-        'https://www18.a8.net/0.gif?a8mat=3BM9IN+E4G7EA+CO4+15UCEA'
+        'https://www18.a8.net/0.gif?a8mat=3BM9IN+E4G7EA+CO4+15UCEA', #
+        'https://www19.a8.net/0.gif?a8mat=3BO804+5VCWJ6+4LM8+60OXD' #s00000021464001
     ]
     len_ = len(urls_)
     index = 0

@@ -71,7 +71,8 @@ urls_ = [
     'https://px.a8.net/svt/ejp?a8mat=3BM9IN+E51N02+4AQ0+5ZU29',  # a8 rirakuru s00000020052001'a4
     'https://px.a8.net/svt/ejp?a8mat=3B5ADU+CL2W4Y+348+66OZ6',  # a8 lolipop s00000000404001'''s1
     'https://px.a8.net/svt/ejp?a8mat=3BM9IN+E4G7EA+CO4+15UCEA',  # a8 xdomain s00000001642007'''a6
-    'https://px.a8.net/svt/ejp?a8mat=3BM9IN+E1H1DE+CO4+6B70I'  # a8 xserverB s00000001642001'''a7
+    'https://px.a8.net/svt/ejp?a8mat=3BM9IN+E1H1DE+CO4+6B70I',  # a8 xserverB s00000001642001'''a7
+    'https://px.a8.net/svt/ejp?a8mat=3BO804+5VCWJ6+4LM8+60OXD'  # a8 kobe s00000021464001 'a2
 ]
 
 len_ = len(urls_)
