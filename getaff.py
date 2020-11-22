@@ -66,13 +66,12 @@ def get_website(p_ip, p_port, uc_, aff_url):
 
 # start code
 urls_ = [
-    'https://px.a8.net/svt/ejp?a8mat=3BM9IN+E68I7M+348+1BP8ZL',  # a8 moomoo s00000000404008'''a5
-    'https://px.a8.net/svt/ejp?a8mat=359020+M125U+CO4+1050F5',  # a8 xserver s00000001642006'''a1
-    'https://px.a8.net/svt/ejp?a8mat=3BM9IN+E51N02+4AQ0+5ZU29',  # a8 rirakuru s00000020052001'a4
-    'https://px.a8.net/svt/ejp?a8mat=3B5ADU+CL2W4Y+348+66OZ6',  # a8 lolipop s00000000404001'''s1
-    'https://px.a8.net/svt/ejp?a8mat=3BM9IN+E4G7EA+CO4+15UCEA',  # a8 xdomain s00000001642007'''a6
-    'https://px.a8.net/svt/ejp?a8mat=3BM9IN+E1H1DE+CO4+6B70I',  # a8 xserverB s00000001642001'''a7
-    'https://px.a8.net/svt/ejp?a8mat=3BO804+5VCWJ6+4LM8+60OXD'  # a8 kobe s00000021464001 'a2
+    'https://px.a8.net/svt/ejp?a8mat=3BM9IN+E68I7M+348+1BP8ZL',  # a8 moomoo s00000000404008'''''a5
+    'https://px.a8.net/svt/ejp?a8mat=3BO804+64VU7M+34E4+6ZEXD',  # a8 futon s00000014566001''''''a1
+    'https://px.a8.net/svt/ejp?a8mat=3BM9IN+E51N02+4AQ0+5ZU29',  # a8 rirakuru s00000020052001'''''a4
+    'https://px.a8.net/svt/ejp?a8mat=3B5ADU+CL2W4Y+348+66OZ6',  # a8 lolipop s00000000404001'''''s1
+    'https://px.a8.net/svt/ejp?a8mat=3BO804+64VU7M+34E4+6YZHT',  # a8 futon s00000014566001'''''a2
+    'https://px.a8.net/svt/ejp?a8mat=3B5ADU+CL2W4Y+348+66OZ6'  # a8 lolipop s00000000404001'''''s1
 ]
 
 len_ = len(urls_)
