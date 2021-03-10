@@ -1,6 +1,9 @@
 __pycache__/proxy.cpython-37.pyc
-.vscode/launch.json
+__pycache__/getaff.cpython-37.pyc
+launch.json
 *.old.py
 *.bat
 settings.json
+*.log
+
 
